@@ -93,6 +93,7 @@ var El = React.createClass({
   onLinkDestClick: function () {
     if (this.props.targetPageId) {
       if (window.Android) {
+        console.log(this.props.targetProjectId, this.props.targetPageId);
         window.Android.setView(`/projects/${this.props.targetProjectId}/pages/${this.props.targetPageId}`);
       }
     } else {
