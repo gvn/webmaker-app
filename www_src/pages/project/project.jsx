@@ -439,20 +439,20 @@ var Project = React.createClass({
 
   setDestination: function () {
     // var pageUrl = `/projects/${this.state.params.project}/pages/${this.state.routeData.pageID}`;
-
     api({
       method: 'patch',
-      uri: `/users/1/projects/${this.state.params.project}/pages/${this.state.routeData.pageID}/elements/${this.state.routeData.elementID}`,
+      uri: `/users/1/projects/${this.state.routeData.projectId}/pages/${this.state.routeData.pageID}/elements/${this.state.routeData.elementID}`,
       json: {
         attributes: {
           targetPageId: this.state.selectedEl,
-          targetProjectId: 1
+          targetProjectId: this.state.params.project
         }
       }
     }, (err, data) => {
       if (err) {
         console.error('There was an error updating the element', err);
       }
+      console.log(data);
 
       if (window.Android) {
         // window.Android.setView(pageUrl);
