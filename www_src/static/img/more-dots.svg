@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="7px" height="25px" viewBox="0 0 7 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12005) - http://www.bohemiancoding.com/sketch -->
+    <title>More icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Colour-/-Text-Options" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Button-Add-to-Page" sketch:type="MSArtboardGroup" transform="translate(-504.000000, -68.000000)" fill="#6D7886">
+            <g id="Header" sketch:type="MSLayerGroup" transform="translate(-0.992291, 32.532120)">
+                <path d="M508.485691,41.4987152 C510.143964,41.4987152 511.48826,40.154419 511.48826,38.4961456 C511.48826,36.8378721 510.143964,35.4935759 508.485691,35.4935759 C506.827417,35.4935759 505.483121,36.8378721 505.483121,38.4961456 C505.483121,40.154419 506.827417,41.4987152 508.485691,41.4987152 Z M508.485691,50.5064241 C510.143964,50.5064241 511.48826,49.1621279 511.48826,47.5038544 C511.48826,45.845581 510.143964,44.5012848 508.485691,44.5012848 C506.827417,44.5012848 505.483121,45.845581 505.483121,47.5038544 C505.483121,49.1621279 506.827417,50.5064241 508.485691,50.5064241 Z M508.485691,59.5141329 C510.143964,59.5141329 511.48826,58.1698367 511.48826,56.5115633 C511.48826,54.8532899 510.143964,53.5089937 508.485691,53.5089937 C506.827417,53.5089937 505.483121,54.8532899 505.483121,56.5115633 C505.483121,58.1698367 506.827417,59.5141329 508.485691,59.5141329 Z" id="More-icon" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

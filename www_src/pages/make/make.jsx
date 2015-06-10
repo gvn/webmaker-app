@@ -4,6 +4,7 @@ var api = require('../../lib/api.js');
 var Card = require('../../components/card/card.jsx');
 var Loading = require('../../components/loading/loading.jsx');
 var router = require('../../lib/router');
+var dispatcher = require('../../lib/dispatcher');
 
 var Make = React.createClass({
   mixins: [router],
@@ -98,11 +99,38 @@ var Make = React.createClass({
     }
   },
 
+  cardActionClick: function (e) {
+    dispatcher.fire('modal-switch:show', {
+      config: {
+        actions: ['Share', 'Delete'],
+        callback: (event) => {
+          if (event.label === 'Delete') {
+            api({
+              method: 'DELETE',
+              uri: `/users/${this.state.user.id}/projects/${e.projectID}`
+            }, (err, body) => {
+              if (err) {
+                return this.onError(err);
+              }
+
+              console.warn('Deleted project: ' + e.projectID);
+              this.load();
+            });
+          } else if (event.label === 'Share') {
+            // TODO
+          }
+        }
+      }
+    });
+  },
+
   render: function () {
 
     var cards = this.state.projects.map(project => {
       return (
         <Card
+          onActionsClick={this.cardActionClick}
+          projectID={project.id}
           key={project.id}
           url={"/users/" + project.author.id + "/projects/" + project.id}
           href="/pages/project"
