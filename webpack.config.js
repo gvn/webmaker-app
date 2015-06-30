@@ -1,5 +1,10 @@
 var getPages = require('./npm_tasks/get-pages');
 var path = require('path');
+var fs = require('fs');
+var webmakerCorePath = fs.realpathSync(path.resolve(
+  __dirname,
+  'node_modules/webmaker-core'
+));
 
 // Prep all entry points
 var entry = {};
@@ -10,6 +15,11 @@ getPages().forEach(function (page) {
 module.exports = {
   entry: entry,
   devtool: 'source-map', //not good for ff
+
+  // http://webpack.github.io/docs/troubleshooting.html#npm-linked-modules-doesn-t-find-their-dependencies
+  resolve: { fallback: path.join(__dirname, "node_modules") },
+  resolveLoader: { fallback: path.join(__dirname, "node_modules") },
+
   output: {
     path: __dirname + '/app/src/main/assets/www/js',
     filename: '[name].bundle.js'
@@ -19,17 +29,17 @@ module.exports = {
       {
         test: /\.js$/,
         loaders:  ['babel-loader'],
-        include: path.resolve(__dirname, 'node_modules/webmaker-core')
+        include: webmakerCorePath
       },
       {
         test: /\.jsx$/,
         loaders:  ['babel-loader', 'jsx-loader'],
-        include: path.resolve(__dirname, 'node_modules/webmaker-core')
+        include: webmakerCorePath
       },
       {
         test: /\.json$/,
         loader: 'json-loader',
-        include: [path.resolve(__dirname, 'node_modules/webmaker-core'),  path.resolve(__dirname, 'node_modules')]
+        include: [webmakerCorePath,  path.resolve(__dirname, 'node_modules')]
       }
     ]
   }
